@@ -1,2 +1,6 @@
 To @ explore out strange new worlds,
+<<<<<<< HEAD
 To seek out new life and new civilizations ???
+=======
+To seek out new life and new civilizations ?
+>>>>>>> C4
