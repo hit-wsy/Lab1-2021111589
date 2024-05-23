@@ -13,8 +13,8 @@ public class Read {
 
     public static String[] inputWords;  //输入单词列表
 
-    private static Set<String> visitedNodes = new  LinkedHashSet<>();;
-    private static Set<Edge> visitedEdges= new  LinkedHashSet<>();;;
+    private static Set<String> visitedNodes = new  LinkedHashSet<>();
+    private static Set<Edge> visitedEdges= new  LinkedHashSet<>();
     private static Random random = new Random();
 
     private static String shortestPathText =new String();
