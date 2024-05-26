@@ -261,7 +261,7 @@ public class Read {
         }
         Collections.reverse(shortestPath); // 因为是从 word2 倒推回来的，需要翻转列表
         createDotGraph(dotFormat+shortestPathText,"有向图");
-        return String.join(" -> ", shortestPath);
+        return String.join(" -> ", shortestPath)+"   长度："+distances.get(word2);
     }
 
     public static void calcShortestPath(String word) {
