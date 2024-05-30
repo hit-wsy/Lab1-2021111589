@@ -106,7 +106,6 @@ public class Read {
         String word3 = " ";
         if (flag1 && flag2){
             List<Edge> word1Neighbors = wordGraph.get(wordExist(word1)).getEdges();
-
             for (Edge neighbor : word1Neighbors) {
                 // 查找和相邻单词相邻的单词
                 List<Edge> neighborNeighbors = wordGraph.get(wordExist(neighbor.to)).getEdges();
@@ -204,7 +203,7 @@ public class Read {
                 }
 
                 if (flag  && j == wordGraph.get(position).getEdges().size()) {
-                    if(nextWord != null || currentWord.equals(Arrays.asList(words).get(words.length-1)))
+                    if(nextWord != null || !currentWord.equals(Arrays.asList(words).get(words.length-1)))
                         wordGraph.get(position).addEdge(currentWord, nextWord);
                 }
             }
@@ -212,6 +211,7 @@ public class Read {
     }
 
     public static String calcShortestPath(String word1, String word2) {
+        //dijkstra算法
         List<String> visited = new ArrayList<>();
         Map<String, Integer> distances = new HashMap<>();
         Map<String, String> predecessors = new HashMap<>(); // 用于记录每个节点的前驱节点
@@ -302,19 +302,15 @@ public class Read {
             visitedNodes.add(currentNode.getWord());
             if (currentNode.getEdges().isEmpty())
                 break;
-
             Edge randomEdge = currentNode.getEdges().get(random.nextInt(currentNode.getEdges().size()));
-
             if (visitedEdges.contains(randomEdge)){
                 visitedNodes.add(currentNode.getWord());
                 break;
             }
             visitedEdges.add(randomEdge);
-
             WordNode nextNode = findNode(randomEdge.getTo());
             if (nextNode == null)
                 break;
-
             currentNode = nextNode;
             walkPath.append(" -> ").append(currentNode.getWord());
         }
