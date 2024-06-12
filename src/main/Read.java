@@ -340,7 +340,7 @@ public class Read {
         int flag;
         String inputText;
         Scanner input = new Scanner(System.in);
-
+        System.out.println("git命令修改");
         while (true) {
             printMenu();
             flag = input.nextInt();
